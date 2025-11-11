@@ -23,7 +23,7 @@ def test_empty_input_returns_empty_dict():
 # ---- Edge-case tests (3) ----
 
 def test_non_letters_ignored_in_signature():
-    assert _signature("a-b!a") == "aaab"[:3]  # actually "aaa" (three a's)
+    assert _signature("a-b!a") == "aab"
     assert _signature("a!a!a") == "aaa"
 
 def test_single_char_words():
@@ -40,7 +40,7 @@ def test_duplicate_words_kept_in_order():
 def test_many_words_multiple_groups():
     words = ["dusty","study","rat","tar","art","evil","vile","veil","live"]
     g = group_anagrams(words)
-    assert set(g["dustu"]) == set()  # key not present
+    assert "dustu" not in g  # key not present
     assert g["dstuy"] == ["dusty","study"]
     assert set(g["art"]) == {"rat","tar","art"}
     assert set(g["eilv"]) == {"evil","vile","veil","live"}

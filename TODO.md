@@ -1,0 +1,4 @@
+- [x] Implement _clean_letters function
+- [x] Implement _signature function
+- [x] Implement group_anagrams function
+- [x] Run tests to verify
